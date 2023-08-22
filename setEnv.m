@@ -32,7 +32,7 @@ Battery.InitialCharge = 123.53; % Ahr
 
 % Capacitor Parameter
 Capacitor.Cell_Voltage = 2.7; % V
-Capacitor.Cell_Capacitance = 1500; % F
+Capacitor.Cell_Capacitance = 2200; % F
 Capacitor.Cell_InternalResistance = 0.47; % mOhm
 Capacitor.N_Serial = 222;
 
