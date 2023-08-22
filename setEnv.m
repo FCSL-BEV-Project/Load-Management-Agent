@@ -23,7 +23,7 @@ Power_Demand.WLTP_Class3 = WLTP_Class_3;
 
 % Battery Parameter
 Battery.NominalVoltage = 340; % V
-Battery.InternalResistance = 0.01; % Ohn
+Battery.InternalResistance = 0.01; % Ohm
 Battery.Capacity = 176.47; % Ahr
 Battery.V1 = 306;
 Battery.AH1 = 88.235;
@@ -38,7 +38,7 @@ Capacitor.N_Serial = 222;
 
 Capacitor.Voltage = Capacitor.Cell_Voltage * Capacitor.N_Serial; % V
 Capacitor.Capacitance = 1 / (Capacitor.N_Serial / Capacitor.Cell_Capacitance); % F
-Capacitor.InternalResistance = Capacitor.Cell_InternalResistance * Capacitor.N_Serial; % mOhm
+Capacitor.InternalResistance = Capacitor.Cell_InternalResistance * Capacitor.N_Serial * 0.001; % Ohm
 Capacitor.Coulomb = Capacitor.Voltage * Capacitor.Capacitance; % C
 Capacitor.Capacity = Capacitor.Coulomb / 3600; % Ahr
 
