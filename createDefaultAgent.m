@@ -31,8 +31,8 @@ actnet = [
     reluLayer('Name', 'relu2')
     fullyConnectedLayer(64, 'Name', 'hidden3')
     reluLayer('Name', 'relu3')
-    fullyConnectedLayer(2, 'Name', 'act_before')
-    softmaxLayer('Name', 'act')
+    fullyConnectedLayer(2, 'Name', 'act')
+    % softmaxLayer('Name', 'act')
 ];
 
 actor = rlDeterministicActorRepresentation( ...
