@@ -3,7 +3,7 @@
 
 
 % set Env
-observationDim = [3 1];
+observationDim = [4 1];
 observationInfo = rlNumericSpec(observationDim);
 
 actionDim = [2 1];
@@ -24,10 +24,10 @@ HESS_Env = rlSimulinkEnv( ...
 
 % actor
 actnet = [
-    featureInputLayer(3, 'Name', 'obs')
-    fullyConnectedLayer(64, 'Name', 'hidden1')
+    featureInputLayer(4, 'Name', 'obs')
+    fullyConnectedLayer(128, 'Name', 'hidden1')
     reluLayer('Name', 'relu1')
-    fullyConnectedLayer(64, 'Name', 'hidden2')
+    fullyConnectedLayer(128, 'Name', 'hidden2')
     reluLayer('Name', 'relu2')
     fullyConnectedLayer(64, 'Name', 'hidden3')
     reluLayer('Name', 'relu3')
@@ -44,21 +44,19 @@ actor = rlDeterministicActorRepresentation( ...
 
 % critic
 obsPath = [
-    featureInputLayer(3, 'Name','obs')
-    fullyConnectedLayer(64, 'Name', 'hidden1')
+    featureInputLayer(4, 'Name','obs')
+    fullyConnectedLayer(128, 'Name', 'hidden1')
     reluLayer('Name', 'relu1')
-    fullyConnectedLayer(64, 'Name', 'hidden2')
-    reluLayer('Name', 'relu2')
     additionLayer(2, 'Name', 'add')
+    reluLayer('Name', 'relu2')
+    fullyConnectedLayer(64, 'Name', 'hidden2')
     reluLayer('Name', 'relu3')
-    fullyConnectedLayer(64, 'Name', 'hidden3')
-    reluLayer('Name', 'relu4')
     fullyConnectedLayer(1, 'Name', 'value')
 ];
 
 actPath = [
     featureInputLayer(2, 'Normalization','none', 'Name','act')
-    fullyConnectedLayer(64, 'Name', 'fcact')
+    fullyConnectedLayer(128, 'Name', 'fcact')
 ];
 
 qvalnet = layerGraph(obsPath);
@@ -73,10 +71,11 @@ critic = rlQValueRepresentation( ...
 % agent
 
 options = rlDDPGAgentOptions;
-options.ExperienceBufferLength = 10000;
+options.ExperienceBufferLength = 1000000;
 options.DiscountFactor = 0.999;
 options.TargetSmoothFactor = 0.005;
-options.MiniBatchSize = 128;
+options.MiniBatchSize = 1024;
+
 
 agent = rlDDPGAgent(actor, critic, options);
 

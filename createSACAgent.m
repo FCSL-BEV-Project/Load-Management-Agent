@@ -3,7 +3,7 @@
 
 
 % set Env
-observationDim = [3 1];
+observationDim = [4 1];
 observationInfo = rlNumericSpec(observationDim);
 
 actionDim = [2 1];
@@ -23,7 +23,7 @@ HESS_Env = rlSimulinkEnv( ...
 % ===================Critic===================
 % Observation path
 obsPath = [
-    featureInputLayer(3, Name="obsPathIn")
+    featureInputLayer(4, Name="obsPathIn")
     fullyConnectedLayer(64)
     reluLayer
     fullyConnectedLayer(64, Name="obsPathOut")
@@ -70,7 +70,7 @@ critic2 = rlQValueFunction( ...
 % ===================Actor===================
 % Define common input path
 commonPath = [
-    featureInputLayer(3, Name="netObsIn")
+    featureInputLayer(4, Name="netObsIn")
     fullyConnectedLayer(64)
     reluLayer(Name="CommonRelu")
 ];
