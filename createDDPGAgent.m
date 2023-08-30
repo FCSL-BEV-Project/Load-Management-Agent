@@ -71,9 +71,9 @@ critic = rlQValueRepresentation( ...
 % agent
 
 options = rlDDPGAgentOptions;
-options.ExperienceBufferLength = 1000000;
-options.DiscountFactor = 0.999;
-options.TargetSmoothFactor = 0.005;
+options.ExperienceBufferLength = 10000;
+% options.DiscountFactor = 0.999;
+% options.TargetSmoothFactor = 0.005;
 options.MiniBatchSize = 1024;
 
 
