@@ -3,10 +3,10 @@
 
 
 % set Env
-observationDim = [4 1];
+observationDim = [5 1];
 observationInfo = rlNumericSpec(observationDim);
 
-actionDim = [2 1];
+actionDim = [1 1];
 actionInfo = rlNumericSpec( ...
     actionDim, ...
     'LowerLimit', 0, ...
@@ -24,14 +24,14 @@ HESS_Env = rlSimulinkEnv( ...
 
 % actor
 actnet = [
-    featureInputLayer(4, 'Name', 'obs')
+    featureInputLayer(5, 'Name', 'obs')
     fullyConnectedLayer(128, 'Name', 'hidden1')
     reluLayer('Name', 'relu1')
     fullyConnectedLayer(128, 'Name', 'hidden2')
     reluLayer('Name', 'relu2')
     fullyConnectedLayer(64, 'Name', 'hidden3')
     reluLayer('Name', 'relu3')
-    fullyConnectedLayer(2, 'Name', 'act')
+    fullyConnectedLayer(1, 'Name', 'act')
     % softmaxLayer('Name', 'act')
 ];
 
@@ -44,7 +44,7 @@ actor = rlDeterministicActorRepresentation( ...
 
 % critic
 obsPath = [
-    featureInputLayer(4, 'Name','obs')
+    featureInputLayer(5, 'Name','obs')
     fullyConnectedLayer(128, 'Name', 'hidden1')
     reluLayer('Name', 'relu1')
     additionLayer(2, 'Name', 'add')
@@ -55,7 +55,7 @@ obsPath = [
 ];
 
 actPath = [
-    featureInputLayer(2, 'Normalization','none', 'Name','act')
+    featureInputLayer(1, 'Normalization','none', 'Name','act')
     fullyConnectedLayer(128, 'Name', 'fcact')
 ];
 

@@ -28,12 +28,12 @@ Battery.InitialCharge = 123.53; % Ahr
 
 % Capacitor Parameter
 Capacitor.Cell_Voltage = 2.7; % V
-Capacitor.Cell_Capacitance = 2200; % F
+Capacitor.Cell_Capacitance = 3000; % F
 Capacitor.Cell_InternalResistance = 0.47; % mOhm
 Capacitor.N_Serial = 222;
 
 Capacitor.Voltage = Capacitor.Cell_Voltage * Capacitor.N_Serial; % V
 Capacitor.Capacitance = 1 / (Capacitor.N_Serial / Capacitor.Cell_Capacitance); % F
-Capacitor.InternalResistance = Capacitor.Cell_InternalResistance * Capacitor.N_Serial * 0.001; % Ohm
+Capacitor.InternalResistance = Capacitor.Cell_InternalResistance * Capacitor.N_Serial * 0.001; % mOhm
 Capacitor.Coulomb = Capacitor.Voltage * Capacitor.Capacitance; % C
 Capacitor.Capacity = Capacitor.Coulomb / 3600; % Ahr
