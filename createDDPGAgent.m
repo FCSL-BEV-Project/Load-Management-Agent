@@ -3,7 +3,7 @@
 
 
 % set Env
-observationDim = [5 1];
+observationDim = [4 1];
 observationInfo = rlNumericSpec(observationDim);
 
 actionDim = [1 1];
@@ -24,7 +24,7 @@ HESS_Env = rlSimulinkEnv( ...
 
 % actor
 actnet = [
-    featureInputLayer(5, 'Name', 'obs')
+    featureInputLayer(4, 'Name', 'obs')
     fullyConnectedLayer(128, 'Name', 'hidden1')
     reluLayer('Name', 'relu1')
     fullyConnectedLayer(128, 'Name', 'hidden2')
@@ -44,7 +44,7 @@ actor = rlDeterministicActorRepresentation( ...
 
 % critic
 obsPath = [
-    featureInputLayer(5, 'Name','obs')
+    featureInputLayer(4, 'Name','obs')
     fullyConnectedLayer(128, 'Name', 'hidden1')
     reluLayer('Name', 'relu1')
     additionLayer(2, 'Name', 'add')
