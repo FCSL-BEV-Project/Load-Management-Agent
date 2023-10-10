@@ -20,11 +20,13 @@ Power_Demand.WLTP_Class3 = WLTP_Class_3;
 % Battery Parameter
 Battery.NominalVoltage = 340; % V
 Battery.InternalResistance = 0.01; % Ohm
-Battery.Capacity = 176.47; % Ahr
+Battery.InitialCapacity = 176.47; % Ahr
 Battery.V1 = 306;
 Battery.AH1 = 88.235;
-Battery.InitialCharge = 123.53; % Ahr
-
+Battery.SOH = 1;
+Battery.InitialSOC = 1;
+Battery.Capacity = Battery.InitialCapacity * Battery.SOH; % Ahr
+Battery.InitialCharge = Battery.InitialSOC * Battery.Capacity; % Ahr
 
 % Capacitor Parameter
 Capacitor.Cell_Voltage = 2.7; % V
@@ -43,4 +45,4 @@ Capacitor.Capacity = Capacitor.Coulomb / 3600; % Ahr
 Split_Rate = 0.9;
 
 % Drive Cycle
-sim_case = 6;
+sim_case = 2;

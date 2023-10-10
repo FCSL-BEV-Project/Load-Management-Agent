@@ -11,11 +11,8 @@ disp('clear vars ...')
 setHESSParam
 disp('Load HESS Param ...')
 
-% createDDPGAgent
-% createSACAgent
 disp('set RL env ...')
-setRLEnv;
-% load RL_Agent/dqn_agent.mat;
-
+setDQNEnv;
+load RL_Agent/DQN-0929-1.mat;
 
 disp('=====Env Configuration Finished!=====')
