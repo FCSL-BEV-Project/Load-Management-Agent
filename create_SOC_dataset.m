@@ -14,7 +14,7 @@ len = size(start_soc_list, 2);
 disp('========start simulation!========')
 
 
-for i = 1:1
+for i = 1:6
 
     sim_case = i;
 
