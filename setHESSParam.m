@@ -45,4 +45,4 @@ Capacitor.Capacity = Capacitor.Coulomb / 3600; % Ahr
 Split_Rate = 0.9;
 
 % Drive Cycle
-sim_case = 2;
+sim_case = 6;
