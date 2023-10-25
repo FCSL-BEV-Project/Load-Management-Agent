@@ -2,8 +2,10 @@
 clear
 clearvars
 
+% load data(rate0.5).mat
+load data.mat
 
-load data.mat % preprocess에서 저장한 파일 불러오기
+data = data(randperm(numel(data)));
 
 numChannels = size(data{1}, 1) - 1;
 numObservations = numel(data);
@@ -41,8 +43,8 @@ layers = [
 
 options = trainingOptions( ...
     "adam", ...
-    MaxEpochs=300, ... % 에포크 늘려서 학습시켜봐
-    MiniBatchSize=10, ...
+    MaxEpochs=100, ... % 에포크 늘려서 학습시켜봐
+    MiniBatchSize=5, ...
     SequencePaddingDirection="left", ...
     Shuffle="never", ...
     Plots="training-progress", ...
@@ -53,7 +55,7 @@ options = trainingOptions( ...
 
 net = trainNetwork(X_Train, Y_Train, layers, options);
 
-save net.mat net;
+save net4.mat net;
 
 %{
 
