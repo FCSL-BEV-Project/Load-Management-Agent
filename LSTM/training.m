@@ -2,8 +2,8 @@
 clear
 clearvars
 
-% load data(rate0.5).mat
-load data.mat
+load data(rate0.5).mat
+% load data.mat
 
 data = data(randperm(numel(data)));
 
@@ -53,9 +53,9 @@ options = trainingOptions( ...
 
 
 
-net = trainNetwork(X_Train, Y_Train, layers, options);
+% net = trainNetwork(X_Train, Y_Train, layers, options);
 
-save net4.mat net;
+% save net4.mat net;
 
 %{
 

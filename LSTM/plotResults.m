@@ -1,6 +1,6 @@
 
 
-Y_Pred = predict(net, X_Test, 'MiniBatchSize', 1);
+% Y_Pred = predict(net, X_Test, 'MiniBatchSize', 1);
 
 idx = randperm(numel(Y_Pred), 9);
 
