@@ -2,8 +2,8 @@
 clear
 clearvars
 
-load data(rate0.5).mat
-% load data.mat
+% load data(rate0.5).mat
+load data.mat
 
 data = data(randperm(numel(data)));
 
@@ -43,7 +43,7 @@ layers = [
 
 options = trainingOptions( ...
     "adam", ...
-    MaxEpochs=100, ... % 에포크 늘려서 학습시켜봐
+    MaxEpochs=100, ...
     MiniBatchSize=5, ...
     SequencePaddingDirection="left", ...
     Shuffle="never", ...
@@ -53,9 +53,9 @@ options = trainingOptions( ...
 
 
 
-% net = trainNetwork(X_Train, Y_Train, layers, options);
+net = trainNetwork(X_Train, Y_Train, layers, options);
 
-% save net4.mat net;
+save net4.mat net;
 
 %{
 
