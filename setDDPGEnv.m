@@ -21,3 +21,4 @@ clear observationInfo;
 
 clear choices;
 clear actionInfo;
+clear actionDim;
