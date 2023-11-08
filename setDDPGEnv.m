@@ -1,6 +1,6 @@
 
 % set Env
-observationDim = [5 1];
+observationDim = [3 1];
 observationInfo = rlNumericSpec(observationDim);
 
 actionDim = [1 1];
