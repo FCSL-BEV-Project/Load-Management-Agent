@@ -46,4 +46,6 @@ Split_Rate = 0.9;
 
 % Drive Cycle
 % sim_case = 6;
-sim_case = randi([2 6], 1, 1);
+sim_case = randi([4 6], 1, 1);
+
+Max_Power = 200000; % W
