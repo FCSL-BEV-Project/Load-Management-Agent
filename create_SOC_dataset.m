@@ -6,7 +6,7 @@ setEnv;
 modelName = "HESS";
 
 idx = 1;
-time = ["1372" "2474" "1369" "1022" "1477" "1800"];
+time = ["2474" "1372" "1369" "1022" "1477" "1800"];
 
 start_soc_list = linspace(1, 0.2, 100);
 len = size(start_soc_list, 2);

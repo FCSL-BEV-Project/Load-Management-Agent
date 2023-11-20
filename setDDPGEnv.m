@@ -16,6 +16,9 @@ HESS_Env = rlSimulinkEnv( ...
     observationInfo, actionInfo ...
 );
 
+HESS_Env.ResetFcn = @(in) myResetFunc(in);
+HESS_Env.UseFastRestart = 'off';
+
 clear observationDim;
 clear observationInfo;
 

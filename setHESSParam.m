@@ -2,7 +2,7 @@
 % Power Demand
 load Drive-Cycle/FTP72_Power.mat
 load Drive-Cycle/FTP75_Power.mat
-load Drive-Cycle/UDDS_Power.mat
+load Drive-Cycle/HUDDS_Power.mat
 load Drive-Cycle/WLTP_Class1_Power.mat
 load Drive-Cycle/WLTP_Class2_Power.mat
 load Drive-Cycle/WLTP_Class3_Power.mat
@@ -45,4 +45,5 @@ Capacitor.Capacity = Capacitor.Coulomb / 3600; % Ahr
 Split_Rate = 0.9;
 
 % Drive Cycle
-sim_case = 6;
+% sim_case = 6;
+sim_case = randi([2 6], 1, 1);
