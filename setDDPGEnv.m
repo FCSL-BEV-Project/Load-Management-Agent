@@ -12,16 +12,16 @@ actionInfo = rlNumericSpec( ...
 
 HESS_Env = rlSimulinkEnv( ...
     'HESS', ...
-    'HESS/RL-based EMS/Combined/Agent', ...
+    'HESS/RL-based EMS/DDPG/Agent', ...
     observationInfo, actionInfo ...
 );
 
-HESS_Env.ResetFcn = @(in) myResetFunc(in);
-HESS_Env.UseFastRestart = 'off';
+% HESS_Env.ResetFcn = @(in) myResetFunc(in);
+% HESS_Env.UseFastRestart = 'off';
 
 clear observationDim;
-clear observationInfo;
+% clear observationInfo;
 
 clear choices;
-clear actionInfo;
+% clear actionInfo;
 clear actionDim;
