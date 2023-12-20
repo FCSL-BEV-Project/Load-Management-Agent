@@ -16,6 +16,8 @@ HESS_Env = rlSimulinkEnv( ...
     observationInfo, actionInfo ...
 );
 
+load RL_Agent/SAC_Agent_1221.mat
+
 % HESS_Env.ResetFcn = @(in) myResetFunc(in);
 % HESS_Env.UseFastRestart = 'off';
 
