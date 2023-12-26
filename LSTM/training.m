@@ -34,8 +34,11 @@ end
 
 layers = [
     sequenceInputLayer(numChannels)
-    lstmLayer(256)
-    fullyConnectedLayer(128)
+    lstmLayer(128, 'OutputMode', 'sequence')
+    dropoutLayer(0.2)
+    lstmLayer(128, 'OutputMode', 'last')
+    dropoutLayer(0.2)
+    fullyConnectedLayer(64)
     reluLayer
     fullyConnectedLayer(numResponse)
     regressionLayer
