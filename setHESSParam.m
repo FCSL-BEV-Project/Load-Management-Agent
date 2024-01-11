@@ -48,4 +48,4 @@ Split_Rate = 0.9;
 sim_case = 6;
 % sim_case = randi([4 6], 1, 1);
 
-Max_Power = 200000; % W
+Max_Power = 100000; % W
