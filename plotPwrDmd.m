@@ -7,13 +7,36 @@ load Drive-Cycle/WLTP_Class2_Power.mat
 load Drive-Cycle/WLTP_Class3_Power.mat
 
 figure(1)
-hold on
-plot(FTP72.time, FTP72.signals.values);
+
+subplot(4, 1, 1);
 plot(FTP75.time, FTP75.signals.values);
-plot(HUDDS.time, HUDDS.signals.values);
+xlabel('time');
+ylabel('Power (W)')
+title('FTP75')
+
+subplot(4, 1, 2);
 plot(WLTP_Class_1.time, WLTP_Class_1.signals.values);
+xlabel('time');
+ylabel('Power (W)')
+xlim([0 1022]);
+title('WLTP Class 1')
+
+
+subplot(4, 1, 3);
 plot(WLTP_Class_2.time, WLTP_Class_2.signals.values);
+xlabel('time');
+ylabel('Power (W)')
+title('WLTP Class 2')
+
+
+subplot(4, 1, 4);
 plot(WLTP_Class_3.time, WLTP_Class_3.signals.values);
+xlabel('time');
+ylabel('Power (W)')
+title('WLTP Class 3')
+
+
+
 
 FTP72_max = max(FTP72.signals.values);
 FTP75_max = max(FTP75.signals.values);

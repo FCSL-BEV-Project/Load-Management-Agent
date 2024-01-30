@@ -5,10 +5,11 @@ y = linspace(0, 1, 11); % UC Rate
 
 % F = X .* Y;
 
-F = ((X .* 0.5) .^ (Y .* 0.5));
+F = X .* Y;
 
-% surf(X, Y, F);
-bar3(F);
+surf(X, Y, F);
+% bar3(F);
+
 xlabel('Power Dmd');
 ylabel('UC Rate');
 zlabel('Reward');
